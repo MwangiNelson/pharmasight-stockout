@@ -1,0 +1,49 @@
+{
+  "items_in_extract": 80,
+  "items_without_opening_balance": 4,
+  "dispensing_lines_raw": 162796,
+  "duplicate_lines_dropped": 491,
+  "reversal_pairs_dropped": 518,
+  "pack_unit_records_converted": 705,
+  "outage_days_detected": [
+    "2024-08-19",
+    "2024-08-20",
+    "2024-08-21",
+    "2024-09-05",
+    "2024-09-06",
+    "2025-01-19",
+    "2025-01-20",
+    "2025-01-21",
+    "2025-01-22",
+    "2025-12-01",
+    "2025-12-02",
+    "2025-12-03",
+    "2025-12-04",
+    "2025-12-05"
+  ],
+  "untrusted_item_day_share": 0.1747,
+  "rows": {
+    "item_days": 50033,
+    "after_28_day_warm_up": 47905,
+    "after_untrusted_opening_balance": 39173,
+    "in_stock_at_start_of_day": 33478,
+    "label_window_complete_and_trusted": 31192
+  },
+  "positive_rate": 0.1011,
+  "stockout_episodes": 552,
+  "label_audit_against_simulator_truth": {
+    "stockout_days_on_trusted_days": {
+      "precision": 0.999,
+      "recall": 0.777
+    },
+    "stockout_days_on_untrusted_days": {
+      "precision": 0.803,
+      "recall": 0.335
+    },
+    "outage_days": {
+      "injected": 14,
+      "detected": 14,
+      "detected_and_injected": 14
+    }
+  }
+}

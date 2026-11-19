@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "item_id": "MED-007",
+      "as_of": "2026-02-02",
+      "stock_on_hand": 40,
+      "dispensed_last_7d": 95,
+      "dispensed_last_28d": 410,
+      "dispensing_std_28d": 6.2,
+      "outstanding_order_qty": 0,
+      "days_since_last_order": 12,
+      "recent_lead_time_days": 9,
+      "stockout_days_last_90d": 4,
+      "days_since_last_stockout": 30
+    },
+    {
+      "item_id": "MED-031",
+      "as_of": "2026-02-02",
+      "stock_on_hand": 120,
+      "dispensed_last_7d": 60,
+      "dispensed_last_28d": 250,
+      "dispensing_std_28d": 4.1,
+      "outstanding_order_qty": 300,
+      "oldest_open_order_age_days": 24,
+      "days_since_last_order": 3,
+      "recent_lead_time_days": 18,
+      "stockout_days_last_90d": 0
+    },
+    {
+      "item_id": "MED-052",
+      "as_of": "2026-02-02",
+      "stock_on_hand": 2400,
+      "dispensed_last_7d": 140,
+      "dispensed_last_28d": 600,
+      "dispensing_std_28d": 9.5,
+      "outstanding_order_qty": 0,
+      "days_since_last_order": 20,
+      "recent_lead_time_days": 7,
+      "stockout_days_last_90d": 0
+    }
+  ]
+}

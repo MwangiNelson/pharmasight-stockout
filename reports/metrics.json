@@ -1,0 +1,241 @@
+{
+  "split": {
+    "train": {
+      "rows": 20065,
+      "from": "2024-05-29",
+      "to": "2025-06-24",
+      "positive_rate": 0.089
+    },
+    "validation": {
+      "rows": 6720,
+      "from": "2025-07-01",
+      "to": "2025-10-25",
+      "positive_rate": 0.113
+    },
+    "test": {
+      "rows": 3658,
+      "from": "2025-11-01",
+      "to": "2026-02-22",
+      "positive_rate": 0.135
+    }
+  },
+  "validation": {
+    "days_of_stock_rule_average_precision": 0.274,
+    "best_logistic_regression": {
+      "average_precision": 0.469,
+      "params": {
+        "C": "0.1",
+        "class_weight": "None"
+      }
+    },
+    "best_gradient_boosting": {
+      "average_precision": 0.455,
+      "params": {
+        "learning_rate": "0.05",
+        "max_leaf_nodes": "15",
+        "class_weight": "None"
+      }
+    },
+    "chosen_family": "logistic_regression"
+  },
+  "test": [
+    {
+      "model": "days_of_stock_rule",
+      "average_precision": 0.362,
+      "average_precision_95ci": [
+        0.279,
+        0.45
+      ],
+      "roc_auc": 0.843,
+      "brier": null,
+      "alerts_per_day": 5,
+      "precision_of_alerts": 0.384,
+      "episodes": 94,
+      "episodes_warned": 66,
+      "episode_recall": 0.702,
+      "median_warning_days": 1.0
+    },
+    {
+      "model": "logistic_regression",
+      "average_precision": 0.517,
+      "average_precision_95ci": [
+        0.431,
+        0.611
+      ],
+      "roc_auc": 0.866,
+      "brier": 0.0878,
+      "alerts_per_day": 5,
+      "precision_of_alerts": 0.457,
+      "episodes": 94,
+      "episodes_warned": 66,
+      "episode_recall": 0.702,
+      "median_warning_days": 1.0
+    },
+    {
+      "model": "gradient_boosting",
+      "average_precision": 0.502,
+      "average_precision_95ci": [
+        0.408,
+        0.618
+      ],
+      "roc_auc": 0.875,
+      "brier": 0.0882,
+      "alerts_per_day": 5,
+      "precision_of_alerts": 0.439,
+      "episodes": 94,
+      "episodes_warned": 63,
+      "episode_recall": 0.67,
+      "median_warning_days": 2.0
+    },
+    {
+      "model": "final (logistic_regression, calibrated)",
+      "average_precision": 0.517,
+      "average_precision_95ci": [
+        0.431,
+        0.611
+      ],
+      "roc_auc": 0.866,
+      "brier": 0.0881,
+      "alerts_per_day": 5,
+      "precision_of_alerts": 0.457,
+      "episodes": 94,
+      "episodes_warned": 66,
+      "episode_recall": 0.702,
+      "median_warning_days": 1.0
+    }
+  ],
+  "test_threshold_view": {
+    "days_of_stock_below_7": {
+      "alerts_per_day": 11.6,
+      "precision": 0.386,
+      "recall": 0.697
+    },
+    "model_threshold": {
+      "alerts_per_day": 4.0,
+      "precision": 0.555,
+      "recall": 0.345
+    }
+  },
+  "test_alert_capacity_sensitivity": [
+    {
+      "alerts_per_day": 3,
+      "rule_episode_recall": 0.532,
+      "model_episode_recall": 0.564
+    },
+    {
+      "alerts_per_day": 5,
+      "rule_episode_recall": 0.702,
+      "model_episode_recall": 0.702
+    },
+    {
+      "alerts_per_day": 10,
+      "rule_episode_recall": 0.904,
+      "model_episode_recall": 0.883
+    }
+  ],
+  "test_by_demand_tier": [
+    {
+      "demand_tier": "slow",
+      "rows": 1240,
+      "positive_rate": 0.11,
+      "average_precision_model": 0.415,
+      "average_precision_rule": 0.267
+    },
+    {
+      "demand_tier": "medium",
+      "rows": 1270,
+      "positive_rate": 0.097,
+      "average_precision_model": 0.428,
+      "average_precision_rule": 0.314
+    },
+    {
+      "demand_tier": "fast",
+      "rows": 1148,
+      "positive_rate": 0.206,
+      "average_precision_model": 0.681,
+      "average_precision_rule": 0.521
+    }
+  ],
+  "permutation_importance_test": [
+    {
+      "feature": "log_days_of_stock",
+      "mean": 0.3986,
+      "std": 0.0066
+    },
+    {
+      "feature": "log_stock",
+      "mean": 0.1614,
+      "std": 0.0054
+    },
+    {
+      "feature": "log_avg_daily_28d",
+      "mean": 0.1231,
+      "std": 0.0068
+    },
+    {
+      "feature": "cv_28d",
+      "mean": 0.0841,
+      "std": 0.0058
+    },
+    {
+      "feature": "recent_trend",
+      "mean": 0.065,
+      "std": 0.0074
+    },
+    {
+      "feature": "log_cover_with_orders",
+      "mean": 0.0612,
+      "std": 0.0044
+    },
+    {
+      "feature": "log_days_since_last_stockout",
+      "mean": 0.0341,
+      "std": 0.005
+    },
+    {
+      "feature": "cover_minus_lead_time",
+      "mean": 0.0131,
+      "std": 0.0044
+    },
+    {
+      "feature": "days_since_last_order",
+      "mean": 0.0131,
+      "std": 0.0013
+    },
+    {
+      "feature": "has_open_order",
+      "mean": 0.0044,
+      "std": 0.0005
+    },
+    {
+      "feature": "month_sin",
+      "mean": 0.0036,
+      "std": 0.0006
+    },
+    {
+      "feature": "oldest_open_order_age_days",
+      "mean": 0.0008,
+      "std": 0.0018
+    },
+    {
+      "feature": "day_of_week",
+      "mean": 0.0005,
+      "std": 0.0007
+    },
+    {
+      "feature": "month_cos",
+      "mean": 0.0001,
+      "std": 0.0001
+    },
+    {
+      "feature": "stockout_days_last_90d",
+      "mean": -0.0006,
+      "std": 0.0004
+    },
+    {
+      "feature": "recent_lead_time_days",
+      "mean": -0.001,
+      "std": 0.0009
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+services:
+  # The prediction API, serving the model artifacts committed in models/.
+  api:
+    build: .
+    image: pharmasight-stockout
+    ports:
+      - "${API_PORT:-8000}:8000"
+    environment:
+      API_KEYS: ${API_KEYS:-dev-key-change-me}
+      APP_ENV: ${APP_ENV:-development}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    restart: unless-stopped
+
+  # Rebuilds data, model and reports from scratch into the host folders:
+  #   docker compose --profile pipeline run --rm pipeline
+  # then `docker compose up -d --build api` so the API serves the new model.
+  pipeline:
+    image: pharmasight-stockout
+    build: .
+    profiles: ["pipeline"]
+    user: root
+    command: python -m pipeline
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./reports:/app/reports

@@ -1,0 +1,47 @@
+{
+  "model_version": "20261119",
+  "trained_at": "2026-11-19T07:46:43+00:00",
+  "trained_on": "synthetic extract from pipeline/simulate.py (seed 8401)",
+  "family": "logistic_regression",
+  "params": {
+    "C": "0.1",
+    "class_weight": "None"
+  },
+  "calibration": "sigmoid, fitted on validation",
+  "horizon_days": 7,
+  "alert_capacity_per_day": 5,
+  "review_threshold": 0.3674,
+  "snapshot_fields": [
+    "stock_on_hand",
+    "dispensed_last_7d",
+    "dispensed_last_28d",
+    "dispensing_std_28d",
+    "outstanding_order_qty",
+    "oldest_open_order_age_days",
+    "days_since_last_order",
+    "recent_lead_time_days",
+    "stockout_days_last_90d",
+    "days_since_last_stockout"
+  ],
+  "features": [
+    "log_stock",
+    "log_avg_daily_28d",
+    "recent_trend",
+    "cv_28d",
+    "log_days_of_stock",
+    "log_cover_with_orders",
+    "has_open_order",
+    "oldest_open_order_age_days",
+    "days_since_last_order",
+    "recent_lead_time_days",
+    "cover_minus_lead_time",
+    "stockout_days_last_90d",
+    "log_days_since_last_stockout",
+    "day_of_week",
+    "month_sin",
+    "month_cos"
+  ],
+  "scikit_learn": "1.8.0",
+  "test_average_precision": 0.517,
+  "test_episode_recall_at_capacity": 0.702
+}

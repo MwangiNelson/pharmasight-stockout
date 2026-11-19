@@ -1,0 +1,13 @@
+family,C,class_weight,val_average_precision,learning_rate,max_leaf_nodes
+logistic_regression,0.1,None,0.4689,,
+logistic_regression,0.1,balanced,0.4511,,
+logistic_regression,1.0,None,0.4654,,
+logistic_regression,1.0,balanced,0.4491,,
+gradient_boosting,,None,0.4547,0.05,15
+gradient_boosting,,balanced,0.4217,0.05,15
+gradient_boosting,,None,0.4308,0.05,31
+gradient_boosting,,balanced,0.4185,0.05,31
+gradient_boosting,,None,0.4334,0.1,15
+gradient_boosting,,balanced,0.3875,0.1,15
+gradient_boosting,,None,0.4185,0.1,31
+gradient_boosting,,balanced,0.413,0.1,31
