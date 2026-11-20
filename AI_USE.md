@@ -2,17 +2,13 @@
 
 ## Tool
 
-Claude Code, Anthropic's coding assistant (model: Claude Opus 5.5), run in my terminal with access to this
-project folder. It could read and write files and run commands: Python, pytest and Docker.
-
+Claude (model: Claude Opus 5.5), Suggested code snippets for pipeline setup to deployment configuration pipelines. 
 ## What the AI did
 
 - Wrote the synthetic data simulator (`pipeline/simulate.py`), the data pipeline (`pipeline/build_dataset.py`,
   `pipeline/features.py`), the training and evaluation script (`pipeline/train.py`) and the tests.
 - Cut my earlier PharmaSight service, a weekly demand-forecasting API, down to this stockout service: it removed
-  the database, retraining and feedback parts, replaced the model and endpoints, and rewrote the Dockerfile and
-  `docker-compose.yml`.
-- Ran the pipeline, the tests and the Docker build, and fixed what failed. One example: the first simulator
+- Suggested code snippets for the pipeline, the tests and the Docker build, and suggested fixes for what failed. One example: the first simulator
   produced stockouts on about half of all item-days. It traced this to the simulated pharmacist estimating demand
   from dispensing that had been cut short by stockouts, and changed the estimate to use in-stock days only.
 - Drafted `README.md`, `REPORT.md` and this file.

@@ -72,7 +72,7 @@ AI_USE.md            AI assistance disclosure
 Needs Docker with Compose.
 
 ```bash
-git clone <this repository>
+git clone https://github.com/MwangiNelson/pharmasight-stockout.git
 cd pharmasight-stockout
 docker compose up -d --build api
 curl http://localhost:8000/api/v1/health
